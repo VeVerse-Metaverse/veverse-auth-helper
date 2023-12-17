@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LE7EL Identity</title>
+    <link rel="shortcut icon" href="https://le7el.com/identity/favicon-12809e5f930ab4f5ead44d7aced6be0f.ico?vsn=d">
+    <style>
+        @font-face {
+            font-family: "Roboto";
+            font-weight: 700;
+            src: 'url(https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap)'
+        }
+    </style>
+    <!-- UI kit -->
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <link rel="stylesheet" href="https://le7el.com/identity/css/app-3a40148679d9b635558dcc4ebc421301.css?vsn=d">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="apple-touch-icon" href="https://le7el.com/identity/images/icons/icon-192x192-87343f5da8c90fa91c0902b10b9c3125.png?vsn=d">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<body class="dark:bg-gray-900">
+<div class="flex flex-col place-content-between h-screen font-roboto bg-gray-100">
+    <header>
+        <div class="w-full flex p-6">
+            <div class="w-20">
+                <a target="_top" href="https://le7el.com">
+                    <img src="https://le7el.com/identity/images/logo-3201e5e5f145bab176bebd392b8c66c6.svg?vsn=d" alt="Go to main page">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div role="main" class="w-full max-w-7xl mx-auto sm:px-6 lg:px-8 sm:pb-20">
+        <div class="h-full flex flex-col items-center justify-center py-8 px-4 sm:px-6 lg:px-8">
+            <div>
+                <h2 class="sm:mt-6 text-center text-3xl text-gray-900">
+                    You have been successfully authenticated!
+                </h2>
+                <p class="sm:mt-6 text-center">
+                    You can now return to the application.
+                </p>
+                <p class="text-center">
+                    You will be redirected to the main page in <span id="countdown"></span> seconds.
+                </p>
+            </div>
+        </div>
+    </div>
+    <footer class="h-10 bg-repeat-x"
+            style="background-size: auto 100%; background-image: url(https://le7el.com/identity/images/footer-decor-b6cdfe84f4407e1352079c75e1f31ba5.svg?vsn=d)">
+    </footer>
+</div>
+<script type="application/javascript">
+    var count = 7;
+    document.getElementById("countdown").innerHTML = "" + count;
+    var interval = setInterval(function () {
+        count--;
+        if (count <= 0) {
+            document.getElementById("countdown").innerHTML = "" + 0;
+            clearInterval(interval);
+            window.location.href = "https://le7el.com";
+        } else {
+            document.getElementById("countdown").innerHTML = "" + count;
+        }
+    }, 1000);
+</script>
+</body>
+</html>
